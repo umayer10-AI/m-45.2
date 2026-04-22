@@ -4,7 +4,9 @@ import { Toastify } from '@/component/Toastify';
 import { createTask } from '@/lib/action';
 import { auth } from '@/lib/auth';
 import { bookData } from '@/lib/task';
+import { Button } from '@heroui/react';
 import { headers } from 'next/headers';
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import React from 'react';
 
@@ -29,6 +31,7 @@ const page = async () => {
             <div className='flex justify-center gap-2 mb-3'>
                 <Toastify></Toastify>
                 <ModalTAsk createTask={createTask}></ModalTAsk>
+                <Link href={'/about/new'}><Button>More Books</Button></Link>
             </div>
             <div className='max-w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-5 mb-10'>
                 {

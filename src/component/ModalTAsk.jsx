@@ -27,12 +27,12 @@ const ModalTAsk = ({createTask}) => {
                       <Input placeholder="Enter your name" />
                     </TextField>
                     <TextField className="w-full" name="category" type="text">
-                      <Label>Category</Label>
-                      <Input placeholder="Enter your email" />
+                      <Label>Description</Label>
+                      <Input placeholder="Enter your description" />
                     </TextField>
-                    <TextField className="w-full" name="publishedYear" type="number">
-                      <Label>Year</Label>
-                      <Input placeholder="Enter your phone number" />
+                    <TextField className="w-full" name="price" type="number">
+                      <Label>Price</Label>
+                      <Input placeholder="Enter your price" />
                     </TextField>
                     
 
