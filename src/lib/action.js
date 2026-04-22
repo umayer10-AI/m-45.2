@@ -11,7 +11,7 @@ export const createTask = async(formData) => {
 
     const res = await postTask(newTask)
     if(res.ok){
-        revalidatePath('/about')
+        revalidatePath('/about')  
     }
     return res
 }
