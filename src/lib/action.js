@@ -4,7 +4,7 @@ import { postTask } from './task';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
-export const createTask = async(formData) => {
+export const createTask = async (formData) => {
 
     const newTask = Object.fromEntries(formData.entries());
     // console.log(newTask)
