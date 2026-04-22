@@ -2,13 +2,12 @@
 import React from "react";
 import { CirclePlus } from "@gravity-ui/icons";
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
-import { createTask } from "@/lib/action";
 
-const ModalTAsk = () => {
+const ModalTAsk = ({createTask}) => {
   return (
     <div>
       <Modal>
-        <Button variant="secondary">Open Contact Form</Button>
+        <Button variant="secondary">Open Form</Button>
         <Modal.Backdrop>
           <Modal.Container placement="auto">
             <Modal.Dialog className="sm:max-w-md">
@@ -23,8 +22,8 @@ const ModalTAsk = () => {
               <Modal.Body className="p-6">
                 <Surface variant="default">
                   <form action={createTask} className="flex flex-col gap-4">
-                    <TextField className="w-full" name="name" type="text">
-                      <Label>Name</Label>
+                    <TextField className="w-full" name="title" type="text">
+                      <Label>Title</Label>
                       <Input placeholder="Enter your name" />
                     </TextField>
                     <TextField className="w-full" name="category" type="text">
