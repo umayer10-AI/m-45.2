@@ -39,7 +39,7 @@ const page = () => {
   };
 
   return (
-    <div>
+    <div className="flex justify-center mt-10">
       <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
         {/* name */}
         <TextField
@@ -110,7 +110,7 @@ const page = () => {
           </Button>
         </div>
       </Form>
-      ;
+
     </div>
   );
 };

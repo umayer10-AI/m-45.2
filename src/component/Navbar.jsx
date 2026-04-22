@@ -32,7 +32,7 @@ const Navbar = () => {
               <ThemeToggle></ThemeToggle>
               {
                 user ? <>
-                  <Button variant="danger" onClick={() => signOut()}>Sign Out</Button>
+                  <Button variant="danger-soft" onClick={() => signOut()}>Sign Out</Button>
                 </> : <>
                   <Link href={'/auth/login'}><Button>Sign In</Button></Link>
                 </>
