@@ -15,6 +15,12 @@ const NavLink = () => {
             <li>
               <Link href="/about" className={p==='/about'? "btn btn-accent btn-outline" : "btn"}>About</Link>
             </li>
+            <li>
+              <Link href="/auth/register" className={p==='/auth/register'? "btn btn-accent btn-outline" : "btn"}>Register</Link>
+            </li>
+            <li>
+              <Link href="/auth/login" className={p==='/auth/login'? "btn btn-accent btn-outline" : "btn"}>Log In</Link>
+            </li>
             
           </ul>
     );

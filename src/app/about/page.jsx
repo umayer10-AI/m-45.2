@@ -1,6 +1,15 @@
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
 import React from 'react';
 
-const page = () => {
+const page = async () => {
+
+    const session = await auth.api.getSession({
+        headers: await headers()
+    })
+
+    const
+
     return (
         <div>
             <h2 className='text-3xl font-bold text-center my-10'>About Page</h2>

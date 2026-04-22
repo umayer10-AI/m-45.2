@@ -1,7 +1,22 @@
+"use client"
 import React from "react";
 import NavLink from "./NavLink";
+import { signOut, useSession } from "@/lib/auth-client";
+import Link from "next/link";
+import { Button } from "@heroui/react";
 
 const Navbar = () => {
+
+    const {data,isPending} = useSession()
+    
+    console.log(data)
+
+    if(isPending){
+        return <span className="loading loading-spinner text-warning h-10 w-10"></span>
+    }
+
+    const user = data?.user
+
   return (
     <div>
       <nav className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
@@ -11,6 +26,16 @@ const Navbar = () => {
           </div>
 
           <NavLink></NavLink>
+
+          <div>
+              {
+                user ? <>
+                  <Button variant="danger" onClick={() => signOut()}>Sign Out</Button>
+                </> : <>
+                  <Link href={'/auth/login'}><Button>Sign In</Button></Link>
+                </>
+              }
+          </div>
           
         </header>
       </nav>
