@@ -1,5 +1,6 @@
 import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
+import { redirect } from 'next/navigation';
 import React from 'react';
 
 const page = async () => {
@@ -8,7 +9,11 @@ const page = async () => {
         headers: await headers()
     })
 
-    const
+    const user = session?.user
+
+    if(!user){
+        redirect('/auth/login')
+    }
 
     return (
         <div>
