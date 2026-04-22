@@ -1,3 +1,4 @@
+import ModalTAsk from '@/component/ModalTAsk';
 import { Toastify } from '@/component/Toastify';
 import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
@@ -18,8 +19,11 @@ const page = async () => {
 
     return (
         <div>
-            <h2 className='text-3xl font-bold text-center my-10'>About Page</h2>
-            <Toastify></Toastify>
+            <h2 className='text-3xl font-bold text-center my-5'>About Page</h2>
+            <div className='flex justify-center gap-2'>
+                <Toastify></Toastify>
+                <ModalTAsk></ModalTAsk>
+            </div>
         </div>
     );
 };
