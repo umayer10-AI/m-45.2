@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import { Envelope } from "@gravity-ui/icons";
+import { CirclePlus } from "@gravity-ui/icons";
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
+import { createTask } from "@/lib/action";
 
 const ModalTAsk = () => {
   return (
@@ -14,46 +15,38 @@ const ModalTAsk = () => {
               <Modal.CloseTrigger />
               <Modal.Header>
                 <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
-                  <Envelope className="size-5" />
+                  <CirclePlus className="size-5" />
                 </Modal.Icon>
-                <Modal.Heading>Contact Us</Modal.Heading>
-                <p className="mt-1.5 text-sm leading-5 text-muted">
-                  Fill out the form below and we will get back to you. The modal
-                  adapts automatically when the keyboard appears on mobile.
-                </p>
+                <Modal.Heading>ADD To Books</Modal.Heading>
+                
               </Modal.Header>
               <Modal.Body className="p-6">
                 <Surface variant="default">
-                  <form className="flex flex-col gap-4">
+                  <form action={createTask} className="flex flex-col gap-4">
                     <TextField className="w-full" name="name" type="text">
                       <Label>Name</Label>
                       <Input placeholder="Enter your name" />
                     </TextField>
-                    <TextField className="w-full" name="email" type="email">
-                      <Label>Email</Label>
+                    <TextField className="w-full" name="category" type="text">
+                      <Label>Category</Label>
                       <Input placeholder="Enter your email" />
                     </TextField>
-                    <TextField className="w-full" name="phone" type="tel">
-                      <Label>Phone</Label>
+                    <TextField className="w-full" name="publishedYear" type="number">
+                      <Label>Year</Label>
                       <Input placeholder="Enter your phone number" />
                     </TextField>
-                    <TextField className="w-full" name="company">
-                      <Label>Company</Label>
-                      <Input placeholder="Enter your company name" />
-                    </TextField>
-                    <TextField className="w-full" name="message">
-                      <Label>Message</Label>
-                      <Input placeholder="Enter your message" />
-                    </TextField>
+                    
+
+                    <Modal.Footer>
+                        <Button slot="close" variant="secondary">
+                        Cancel
+                        </Button>
+                        <Button type="submit" slot="close">Send Book</Button>
+                    </Modal.Footer>
+
                   </form>
                 </Surface>
               </Modal.Body>
-              <Modal.Footer>
-                <Button slot="close" variant="secondary">
-                  Cancel
-                </Button>
-                <Button slot="close">Send Message</Button>
-              </Modal.Footer>
             </Modal.Dialog>
           </Modal.Container>
         </Modal.Backdrop>
