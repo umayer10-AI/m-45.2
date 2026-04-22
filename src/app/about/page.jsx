@@ -1,3 +1,4 @@
+import { Toastify } from '@/component/Toastify';
 import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
@@ -18,6 +19,7 @@ const page = async () => {
     return (
         <div>
             <h2 className='text-3xl font-bold text-center my-10'>About Page</h2>
+            <Toastify></Toastify>
         </div>
     );
 };
