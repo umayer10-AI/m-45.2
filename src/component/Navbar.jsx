@@ -4,6 +4,7 @@ import NavLink from "./NavLink";
 import { signOut, useSession } from "@/lib/auth-client";
 import Link from "next/link";
 import { Button } from "@heroui/react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
 
@@ -27,7 +28,8 @@ const Navbar = () => {
 
           <NavLink></NavLink>
 
-          <div>
+          <div className="flex items-center gap-3">
+              <ThemeToggle></ThemeToggle>
               {
                 user ? <>
                   <Button variant="danger" onClick={() => signOut()}>Sign Out</Button>
